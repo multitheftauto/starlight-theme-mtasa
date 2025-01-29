@@ -1,6 +1,6 @@
 import type { StarlightPlugin } from '@astrojs/starlight/types';
 
-export default function mtasaStartlightThemePlugin(): StarlightPlugin {
+export default function mtasaStarlightThemePlugin(): StarlightPlugin {
     return {
         name: 'starlight-theme-mtasa',
         hooks: {

@@ -1,7 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import mtasaStartlightThemePlugin from 'starlight-theme-mtasa'
+import mtasaStarlightThemePlugin from 'starlight-theme-mtasa'
 
 const isDeploy = process.env.GITHUB_ACTIONS === 'true';
 const ownerName = isDeploy ? process.env.GITHUB_REPOSITORY_NAME : undefined;
@@ -14,7 +14,7 @@ export default defineConfig({
     integrations: [
         starlight({
             title: 'Multi Theft Auto: Theme',
-            plugins: [mtasaStartlightThemePlugin()],
+            plugins: [mtasaStarlightThemePlugin()],
             social: {
                 github: 'https://github.com/multitheftauto/starlight-theme-mtasa',
             },
