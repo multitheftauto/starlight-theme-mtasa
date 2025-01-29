@@ -5,9 +5,11 @@ import mtasaStartlightThemePlugin from 'starlight-theme-mtasa'
 
 // https://astro.build/config
 export default defineConfig({
+    site: 'https://multitheftauto.github.io',
+    base: 'starlight-theme-mtasa',
     integrations: [
         starlight({
-            title: 'Multi Theft Auto',
+            title: 'Multi Theft Auto: Theme',
             plugins: [mtasaStartlightThemePlugin()],
             social: {
                 github: 'https://github.com/withastro/starlight',
