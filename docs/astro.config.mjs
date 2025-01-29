@@ -4,8 +4,8 @@ import starlight from '@astrojs/starlight';
 import mtasaStartlightThemePlugin from 'starlight-theme-mtasa'
 
 const isDeploy = process.env.GITHUB_ACTIONS === 'true';
-const ownerName = isDeploy ? process.env.GITHUB_REPOSITORY_OWNER : undefined;
-const siteName = isDeploy ? `https://${process.env.GITHUB_REPOSITORY_NAME}.github.io` : undefined;
+const ownerName = isDeploy ? process.env.GITHUB_REPOSITORY_NAME : undefined;
+const siteName = isDeploy ? `https://${process.env. GITHUB_REPOSITORY_OWNER}.github.io` : undefined;
 
 // https://astro.build/config
 export default defineConfig({
