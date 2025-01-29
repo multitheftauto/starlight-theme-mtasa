@@ -4,13 +4,13 @@ import starlight from '@astrojs/starlight';
 import mtasaStarlightThemePlugin from 'starlight-theme-mtasa'
 
 const isDeploy = process.env.GITHUB_ACTIONS === 'true';
-const ownerName = isDeploy ? process.env.GITHUB_REPOSITORY_NAME : undefined;
-const siteName = isDeploy ? `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io` : undefined;
+const repositoryName = (isDeploy && process.env.GITHUB_REPOSITORY) ? (process.env.GITHUB_REPOSITORY).split('/')[0] : undefined;
+const siteBaseUrl = (isDeploy && process.env.GITHUB_REPOSITORY_OWNER) ? `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io` : undefined;
 
 // https://astro.build/config
 export default defineConfig({
-    site: siteName,
-    base: ownerName,
+    site: siteBaseUrl,
+    base: repositoryName,
     integrations: [
         starlight({
             title: 'Multi Theft Auto: Theme',
