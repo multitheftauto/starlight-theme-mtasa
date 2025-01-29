@@ -1,0 +1,7 @@
+{
+    "name": "starlight-theme-mtasa-monorepo",
+    "workspaces": [
+        "docs/",
+        "packages/*"
+    ]
+}

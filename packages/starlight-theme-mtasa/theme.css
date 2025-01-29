@@ -1,0 +1,44 @@
+:root {
+    --mta-nav-height: 40px;
+    --sl-font: 'Finlandica Variable', var(--sl-font-system), serif;
+
+    /* We have to replicate the default behavior/sizing of the regular header. */
+    --sl-nav-height-original: 3.5rem;
+
+    /* We override the Starlight property here so we don't have to adjust a bunch of controls manually. */
+    --sl-nav-height: calc(var(--sl-nav-height-original) + var(--mta-nav-height));
+}
+
+/* Adapted from starlight\packages\starlight\style\props.css */
+@media (min-width: 50em) {
+    :root {
+        --sl-nav-height-original: 4rem;
+    }
+}
+
+/* Add the MTA color strip to the header, 
+   remove the padding so we can utilize the full width of the page,
+   and include the height of the MTA navigation in the calculation of the header. */
+.page > .header {
+    background: var(--sl-color-bg-nav) url('starlight-theme-mtasa/color-strip.png') no-repeat left bottom / 100% 3px;
+    padding: 0;
+}
+
+/* Apply the padding and height of the original header, which we've replaced. */
+.page > .header > .header {
+    padding: var(--sl-nav-pad-y) var(--sl-nav-pad-x);
+    height: var(--sl-nav-height-original);
+}
+
+/* Increase the padding on the right side of header to move the search control to the left,
+   to prevent hiding it beneath the menu button. */
+@media (max-width: 50rem) {
+    [data-has-sidebar] .page > .header > .header {
+        padding-inline-end: calc(var(--sl-nav-gap) + var(--sl-nav-pad-x) + var(--sl-menu-button-size))
+    }
+}
+
+/* Adjust the top-offset of the menu button to include the height of the MTA navigation. */
+.page > .sidebar > starlight-menu-button > button {
+    top: calc(var(--mta-nav-height) + (var(--sl-nav-height-original) - var(--sl-menu-button-size)) / 2);
+}

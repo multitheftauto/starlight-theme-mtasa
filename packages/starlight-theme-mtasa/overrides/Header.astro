@@ -1,0 +1,116 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/Header.astro';
+---
+
+<nav>
+    <a href="https://multitheftauto.com" rel="noopener">Home</a>
+    <a class="keepMobile" href="https://discord.com/invite/mtasa" rel="noopener" target="_blank">Discord</a>
+    <a href="https://community.multitheftauto.com" rel="noopener">Community</a>
+    <a href="https://forum.multitheftauto.com" rel="noopener">Forum</a>
+    <a class="keepMobile" href="https://wiki.multitheftauto.com/wiki/Main_Page" rel="noopener">Wiki</a>
+    <a class="keepMobile" href="https://github.com/multitheftauto/mtasa-blue/issues" rel="noopener" target="_blank">Bugs</a>
+    <a href="https://multitheftauto.com/donate/" rel="noopener">Heroes</a>
+    <a href="https://multitheftauto.com/hosters/" rel="noopener">Hosting</a>
+    <a href="https://community.multitheftauto.com/index.php?p=servers">Servers</a>
+    <a href="https://streamlabs.com/mtaqa/merch" rel="noopener" target="_blank">Merch</a>
+    <a href="https://multitheftauto.crowdin.com/multitheftauto" rel="noopener" target="_blank">Crowdin</a>
+    <span id="onlinePlayers"></span>
+    <script>
+        function updateOnlinePlayers() {
+            var onlinePlayersEl = document.getElementById("onlinePlayers");
+            if (onlinePlayersEl) {
+                fetch("https://multitheftauto.com/count/")
+                    .then(function(r) {
+                        return r.text();
+                    })
+                    .then(function(r) {
+                        var info = r.split(",");
+                        if (info[0] && info[1]) {
+                            onlinePlayersEl.innerHTML = new Intl.NumberFormat("en-US").format(info[0]) + " players online on " + new Intl.NumberFormat("en-US").format(info[1]) + " public servers";
+                        }
+                    });
+            }
+        }
+        updateOnlinePlayers();
+        setInterval(updateOnlinePlayers, 300000);
+    </script>
+</nav>
+
+<Default {...Astro.props}><slot /></Default>
+
+<style>
+    :root {
+        --mta-nav-background: #0B0B0F;
+        --mta-nav-color: #9F9FA2;
+        --mta-nav-color-hover: #ffffff;
+        --mta-nav-pulse-color: lightgreen;
+    }
+
+    :root[data-theme='light'] {
+        --mta-nav-background: #d1d1d1;
+        --mta-nav-color: #414141;
+        --mta-nav-color-hover: #000000;
+        --mta-nav-pulse-color: darkgreen;
+    }
+
+    nav {
+        align-items: center;
+        background: var(--mta-nav-background);
+        color: var(--mta-nav-color);
+        display: flex;
+        gap: 20px;
+        height: 40px;
+        padding: 0 1em;
+        white-space: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        font-size: 14px;
+        font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav a {
+        color: var(--mta-nav-color);
+        border: 0;
+        padding: 7px 0;
+        transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        text-decoration: none;
+    }
+
+    nav a:hover {
+        color: var(--mta-nav-color-hover);
+        text-decoration: none;
+    }
+
+    #onlinePlayers {
+        margin-left: auto;
+        position: relative;
+    }
+
+    @keyframes onlinePlayers {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    #onlinePlayers:not(:empty)::before {
+        animation: onlinePlayers 1s infinite forwards alternate;
+        background: var(--mta-nav-pulse-color);
+        border-radius: 100px;
+        content: " ";
+        display: inline-block;
+        height: 6px;
+        top: 50%;
+        left: -6px;
+        margin-left: 10px;
+        opacity: 0;
+        position: relative;
+        transform: translate(-50%, -50%);
+        width: 6px;
+    }
+</style>

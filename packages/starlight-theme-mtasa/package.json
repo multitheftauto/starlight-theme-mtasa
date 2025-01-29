@@ -1,0 +1,44 @@
+{
+  "name": "starlight-theme-mtasa",
+  "version": "1.0.0",
+  "description": "Starlight theme for Multi Theft Auto",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/multitheftauto/starlight-theme-mtasa.git",
+    "directory": "packages/starlight-theme-mtasa"
+  },
+  "exports": {
+    ".": "./index.ts",
+    "./color-strip.png": "./public/color-strip.png",
+    "./theme.css": "./theme.css",
+    "./font-face.css": "./fonts/finlandica/font-face.css",
+    "./finlandica-cyrillic-ext-wght-italic.woff2": "./fonts/finlandica/finlandica-cyrillic-ext-wght-italic.woff2",
+    "./finlandica-cyrillic-ext-wght-normal.woff2": "./fonts/finlandica/finlandica-cyrillic-ext-wght-normal.woff2",
+    "./finlandica-cyrillic-wght-italic.woff2": "./fonts/finlandica/finlandica-cyrillic-wght-italic.woff2",
+    "./finlandica-cyrillic-wght-normal.woff2": "./fonts/finlandica/finlandica-cyrillic-wght-normal.woff2",
+    "./finlandica-latin-ext-wght-italic.woff2": "./fonts/finlandica/finlandica-latin-ext-wght-italic.woff2",
+    "./finlandica-latin-ext-wght-normal.woff2": "./fonts/finlandica/finlandica-latin-ext-wght-normal.woff2",
+    "./finlandica-latin-wght-italic.woff2": "./fonts/finlandica/finlandica-latin-wght-italic.woff2",
+    "./finlandica-latin-wght-normal.woff2": "./fonts/finlandica/finlandica-latin-wght-normal.woff2",
+    "./ThemeSelect.astro": "./overrides/ThemeSelect.astro",
+    "./Header.astro": "./overrides/Header.astro"
+  },
+  "keywords": [
+    "starlight",
+    "theme",
+    "multitheftauto",
+    "mtasa",
+    "plugin",
+    "astro"
+  ],
+  "peerDependencies": {
+    "@astrojs/starlight": ">=0.30.0"
+  },
+  "author": "Multi Theft Auto team and contributors",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/multitheftauto/starlight-theme-mtasa/issues"
+  },
+  "homepage": "https://github.com/multitheftauto/starlight-theme-mtasa"
+}
