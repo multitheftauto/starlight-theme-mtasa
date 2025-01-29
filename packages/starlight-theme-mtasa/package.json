@@ -35,6 +35,9 @@
   "peerDependencies": {
     "@astrojs/starlight": ">=0.30.0"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "*"
+  },
   "author": "Multi Theft Auto team and contributors",
   "license": "MIT",
   "bugs": {
