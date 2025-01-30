@@ -7,7 +7,6 @@ const isDeploy = process.env.GITHUB_ACTIONS === 'true';
 const repositoryName = (isDeploy && process.env.GITHUB_REPOSITORY) ? (process.env.GITHUB_REPOSITORY).split('/')[1] : undefined;
 const siteBaseUrl = (isDeploy && process.env.GITHUB_REPOSITORY_OWNER) ? `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io` : undefined;
 
-// https://astro.build/config
 export default defineConfig({
     site: siteBaseUrl,
     base: repositoryName,

@@ -1,5 +1,7 @@
 import type { StarlightPlugin } from '@astrojs/starlight/types';
 
+const packageName = '@multitheftauto/starlight-theme-mtasa';
+
 export default function mtasaStarlightThemePlugin(): StarlightPlugin {
     return {
         name: 'starlight-theme-mtasa',
@@ -7,13 +9,13 @@ export default function mtasaStarlightThemePlugin(): StarlightPlugin {
             setup({ config, updateConfig }) {
                 updateConfig({
                     customCss: [
-                        'starlight-theme-mtasa/theme.css',
-                        'starlight-theme-mtasa/font-face.css',
+                        `${packageName}/theme.css`,
+                        `${packageName}/font-face.css`,
                         ...config.customCss ?? [],
                     ],
                     components: {
-                        ThemeSelect: 'starlight-theme-mtasa/ThemeSelect.astro',
-                        Header: 'starlight-theme-mtasa/Header.astro',
+                        ThemeSelect: `${packageName}/ThemeSelect.astro`,
+                        Header: `${packageName}/Header.astro`,
                         ...config.components ?? {},
                     }
                 })

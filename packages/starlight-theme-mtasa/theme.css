@@ -20,7 +20,7 @@
    remove the padding so we can utilize the full width of the page,
    and include the height of the MTA navigation in the calculation of the header. */
 .page > .header {
-    background: var(--sl-color-bg-nav) url('starlight-theme-mtasa/color-strip.png') no-repeat left bottom / 100% 3px;
+    background: var(--sl-color-bg-nav) url('@multitheftauto/starlight-theme-mtasa/color-strip.png') no-repeat left bottom / 100% 3px;
     padding: 0;
 }
 
