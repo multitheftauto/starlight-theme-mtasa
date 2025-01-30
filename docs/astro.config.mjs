@@ -1,7 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import mtasaStarlightThemePlugin from 'starlight-theme-mtasa'
+import mtasaStarlightThemePlugin from '@multitheftauto/starlight-theme-mtasa'
 
 const isDeploy = process.env.GITHUB_ACTIONS === 'true';
 const repositoryName = (isDeploy && process.env.GITHUB_REPOSITORY) ? (process.env.GITHUB_REPOSITORY).split('/')[1] : undefined;
