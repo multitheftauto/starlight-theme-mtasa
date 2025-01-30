@@ -1,5 +1,5 @@
 {
-    "name": "starlight-theme-mtasa-monorepo",
+    "name": "@multitheftauto/starlight-theme-mtasa-monorepo",
     "workspaces": [
         "docs/",
         "packages/*"
