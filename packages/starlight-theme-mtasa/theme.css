@@ -30,6 +30,11 @@
     height: var(--sl-nav-height-original);
 }
 
+/* Fix the height of the logo that depends on the original height of the header. */
+.page > .header > .header .site-title img {
+    height: calc(var(--sl-nav-height-original) - 2 * var(--sl-nav-pad-y));
+}
+
 /* Increase the padding on the right side of header to move the search control to the left,
    to prevent hiding it beneath the menu button. */
 @media (max-width: 50rem) {
