@@ -17,6 +17,14 @@ export default function mtasaStarlightThemePlugin(): StarlightPlugin {
                         ThemeSelect: `${packageName}/ThemeSelect.astro`,
                         Header: `${packageName}/Header.astro`,
                         ...config.components ?? {},
+                    },
+                    social: {
+                        github: 'https://github.com/multitheftauto/',
+                        discord: 'https://discord.com/invite/mtasa',
+                        youtube: 'https://youtube.com/user/mtaqa',
+                        twitch: 'https://twitch.tv/mtaqa',
+                        'x.com': 'https://x.com/mtaqa',
+                        ...config.social ?? {},
                     }
                 })
             }
