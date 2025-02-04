@@ -37,6 +37,16 @@
     height: var(--sl-nav-height-original);
 }
 
+/* Overwrite the template for the grid of the header, so we can move the search to the actual center. */
+.page > .header > .header {
+    grid-template-columns: auto 1fr auto;
+}
+
+/* Center the search control in the header. */
+.page > .header > .header div:has(site-search) {
+    justify-content: center;
+}
+
 /* Fix the height of the logo that depends on the original height of the header. */
 .page > .header > .header .site-title img {
     height: calc(var(--sl-nav-height-original) - 2 * var(--sl-nav-pad-y));
