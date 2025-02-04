@@ -16,6 +16,13 @@
     }
 }
 
+/* Restore the original height for printing. */
+@media print {
+    :root {
+        --sl-nav-height: var(--sl-nav-height-original);
+    }
+}
+
 /* Add the MTA color strip to the header, 
    remove the padding so we can utilize the full width of the page,
    and include the height of the MTA navigation in the calculation of the header. */
