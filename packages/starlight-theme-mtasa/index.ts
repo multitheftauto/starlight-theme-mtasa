@@ -18,14 +18,14 @@ export default function mtasaStarlightThemePlugin(): StarlightPlugin {
                         Header: `${packageName}/Header.astro`,
                         ...config.components ?? {},
                     },
-                    social: {
-                        github: 'https://github.com/multitheftauto/',
-                        discord: 'https://discord.com/invite/mtasa',
-                        youtube: 'https://youtube.com/user/mtaqa',
-                        twitch: 'https://twitch.tv/mtaqa',
-                        'x.com': 'https://x.com/mtaqa',
-                        ...config.social ?? {},
-                    }
+                    social: [
+                        { icon: 'github', href: 'https://github.com/multitheftauto/' },
+                        { icon: 'discord', href: 'https://discord.com/invite/mtasa' },
+                        { icon: 'youtube', href: 'https://youtube.com/user/mtaqa' },
+                        { icon: 'twitch', href: 'https://twitch.tv/mtaqa' },
+                        { icon: 'x.com', href: 'https://x.com/mtaqa' },
+                        ...(config.social || []),
+                    ]
                 })
             }
         },
