@@ -19,11 +19,11 @@ export default function mtasaStarlightThemePlugin(): StarlightPlugin {
                         ...config.components ?? {},
                     },
                     social: [
-                        { icon: 'github', href: 'https://github.com/multitheftauto/' },
-                        { icon: 'discord', href: 'https://discord.com/invite/mtasa' },
-                        { icon: 'youtube', href: 'https://youtube.com/user/mtaqa' },
-                        { icon: 'twitch', href: 'https://twitch.tv/mtaqa' },
-                        { icon: 'x.com', href: 'https://x.com/mtaqa' },
+                        { icon: 'github', href: 'https://github.com/multitheftauto/', label: 'GitHub' },
+                        { icon: 'discord', href: 'https://discord.com/invite/mtasa', label: 'Discord' },
+                        { icon: 'youtube', href: 'https://youtube.com/user/mtaqa', label: 'YouTube' },
+                        { icon: 'twitch', href: 'https://twitch.tv/mtaqa', label: 'Twitch' },
+                        { icon: 'x.com', href: 'https://x.com/mtaqa', label: 'X.com' },
                         ...(config.social || []),
                     ]
                 })
