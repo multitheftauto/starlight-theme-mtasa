@@ -14,9 +14,6 @@ export default defineConfig({
         starlight({
             title: 'Multi Theft Auto: Theme',
             plugins: [mtasaStarlightThemePlugin()],
-            social: {
-                github: 'https://github.com/multitheftauto/starlight-theme-mtasa',
-            },
             social: [
                 { icon: 'github', label: 'GitHub', href: 'https://github.com/multitheftauto/starlight-theme-mtasa' },
             ],
