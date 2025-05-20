@@ -17,6 +17,9 @@ export default defineConfig({
             social: {
                 github: 'https://github.com/multitheftauto/starlight-theme-mtasa',
             },
+            social: [
+                { icon: 'github', label: 'GitHub', href: 'https://github.com/multitheftauto/starlight-theme-mtasa' },
+            ],
             sidebar: [
                 {
                     label: 'Guides',
